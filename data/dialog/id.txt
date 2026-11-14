@@ -1,0 +1,21 @@
+# Format: [id_dialog] lalu baris "Nama: teks". {player} = nama pemain.
+[marla_register]
+Marla: Selamat datang di Guild Petualang. Aku Marla, pengurus administrasi di sini.
+Marla: Kamu belum terdaftar, ya? Biar kuurus sekarang.
+{player}: Namaku {player}.
+Marla: {player}, sudah kucatat. Selamat bergabung!
+
+[marla_idle]
+Marla: Ada yang bisa kubantu, {player}? Jangan lupa rapikan kertas misimu.
+
+[sena]
+Sena: Hai, {player}! Ayo ikut misi bareng, seru lho!
+
+[dion]
+Dion: Duh, sepatuku bolong lagi... Eh, kamu butuh bantuan, {player}?
+
+[elda]
+Elda: Penjagaan berjalan lancar! ...Eh, kamu memperhatikanku? Ma-makasih.
+
+[pintu]
+{player}: Pintu keluar. Peta desa belum dibuat.
