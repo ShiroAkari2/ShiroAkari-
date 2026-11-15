@@ -4,9 +4,10 @@ Marla: Selamat datang di Guild Petualang. Aku Marla, pengurus administrasi di si
 Marla: Kamu belum terdaftar, ya? Biar kuurus sekarang.
 {player}: Namaku {player}.
 Marla: {player}, sudah kucatat. Selamat bergabung!
+Marla: Arena Latihan sudah kubuka. J untuk pedang, K untuk Cahaya Akari. Kalau HP tipis, mandilah di Kolam Cahaya.
 
 [marla_idle]
-Marla: Ada yang bisa kubantu, {player}? Jangan lupa rapikan kertas misimu.
+Marla: Arena Latihan terbuka untukmu, {player}. Hati-hati, makin tinggi levelmu, makin sedikit XP dari slime lama.
 
 [sena]
 Sena: Hai, {player}! Ayo ikut misi bareng, seru lho!
@@ -16,6 +17,9 @@ Dion: Duh, sepatuku bolong lagi... Eh, kamu butuh bantuan, {player}?
 
 [elda]
 Elda: Penjagaan berjalan lancar! ...Eh, kamu memperhatikanku? Ma-makasih.
+
+[kolam]
+Kolam Cahaya: Cahaya putih mengalir ke tubuhmu. HP dan manamu pulih.
 
 [pintu]
 {player}: Pintu keluar. Peta desa belum dibuat.

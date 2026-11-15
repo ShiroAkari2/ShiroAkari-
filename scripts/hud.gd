@@ -4,6 +4,7 @@ var active := false
 var lines := []
 var idx := 0
 var cur_id := ""
+var note_t := 0.0
 var panel: Panel
 var name_lbl: Label
 var text_lbl: Label
@@ -16,7 +17,7 @@ func _ready():
     bar.position = Vector2(12, 10)
     add_child(bar)
     info_lbl = Label.new()
-    info_lbl.position = Vector2(12, 26)
+    info_lbl.position = Vector2(12, 36)
     add_child(info_lbl)
     note_lbl = Label.new()
     note_lbl.position = Vector2(0, 150)
@@ -25,6 +26,8 @@ func _ready():
     add_child(note_lbl)
     panel = Panel.new()
     panel.position = Vector2(16, 268)
+    if DisplayServer.is_touchscreen_available():
+        panel.position = Vector2(16, 150)   # supaya tidak tertutup tombol sentuh
     panel.size = Vector2(608, 84)
     panel.visible = false
     add_child(panel)
@@ -37,16 +40,30 @@ func _ready():
     text_lbl.size = Vector2(584, 52)
     text_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
     panel.add_child(text_lbl)
-    Game.xp_gained.connect(func(a, lv): notice("+%d XP%s" % [a, " - Naik level!" if lv else ""]))
+    Game.xp_gained.connect(_on_xp)
 
-func _process(_d):
-    info_lbl.text = "%s  Lv %d  XP %d/%d" % [Game.player_name, Game.level, Game.xp, Game.level * 10]
+func _exit_tree():
+    Game.input_locked = false   # jangan sampai terkunci kalau scene berganti saat dialog
+
+func _on_xp(amount, leveled):
+    if leveled:
+        notice("Naik level! Lv %d - %s" % [Game.level, Game.level_perk(Game.level)], 3.0)
+    else:
+        notice("+%d XP" % amount)
+
+func _process(delta):
+    if Game.level >= Game.MAX_LEVEL:
+        info_lbl.text = "%s  Lv %d (MAKS)" % [Game.player_name, Game.level]
+    else:
+        info_lbl.text = "%s  Lv %d  XP %d/%d" % [Game.player_name, Game.level, Game.xp, Game.xp_needed(Game.level)]
+    if note_t > 0.0:
+        note_t -= delta
+        if note_t <= 0.0:
+            note_lbl.text = ""
 
 func notice(t: String, secs := 1.5):
     note_lbl.text = t
-    await get_tree().create_timer(secs).timeout
-    if note_lbl.text == t:
-        note_lbl.text = ""
+    note_t = secs
 
 func start_dialog(id: String):
     lines = Game.get_dialog(id)
@@ -55,6 +72,7 @@ func start_dialog(id: String):
     cur_id = id
     idx = 0
     active = true
+    Game.input_locked = true
     panel.visible = true
     _show()
 
@@ -69,6 +87,7 @@ func end_dialog():
     if not active:
         return
     active = false
+    Game.input_locked = false
     panel.visible = false
     dialog_finished.emit(cur_id)
 
