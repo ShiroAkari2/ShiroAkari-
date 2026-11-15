@@ -1,0 +1,167 @@
+SHIROAKARI — PROLOG & AWAL CHAPTER 1: ALUR CERITA DAN RANCANGAN GAMEPLAY
+Dokumen: Alur Cerita (revisi)
+Versi: Draft 2.0
+
+PERUBAHAN DARI DRAFT 1.1
+- Adik sekarang laki-laki, 12 tahun, bernama Rian (nama sementara).
+- Ada pemicu konkret: slime muncul di dekat pagar saat tugas ayah. Pemain melindungi Rian dan sadar desa kekurangan penjaga.
+- Pendaftaran petualang di Guild Eldoria diperkenalkan lewat selebaran pedagang dan dibawa Rian pulang.
+- Tugas ayah dan ibu dipisah agar tidak tumpang tindih.
+- Ramuan dari ibu diganti dengan ramuan dari tetangga (Bu Sari), dan pisau tua ayah ditambahkan.
+- Pilihan malam hari dibuat bercabang ringan (lihat bagian Flag).
+- Surat untuk Rian dihapus, karena belum ada sistem surat.
+- Narasi di gerbang dibuat lebih ringkas dan memakai gambar, bukan penjelasan.
+
+ASUMSI SEMENTARA (ganti jika berubah)
+- Ayah bekerja di ladang.
+- Prolog berakhir di gerbang desa. Pendaftaran Guild terjadi di Chapter 1.
+- Semua nama tempat masih sementara.
+
+1. TUJUAN PROLOG
+- Memperkenalkan tokoh utama sebagai warga desa biasa.
+- Memperkenalkan keluarga: ayah yang pendiam, ibu yang hangat dan khawatir, dan Rian yang ceria tapi mudah gengsi.
+- Mengajarkan kontrol dasar: jalan, bicara, inventory, quest, pedang (J), dan cahaya (K).
+- Membuat rumah terasa sebagai alasan untuk kembali.
+- Mengakhiri prolog dengan keputusan pemain meninggalkan desa, dengan alasan yang sudah dibangun sebelumnya.
+
+2. LOKASI DAN TOKOH
+Lokasi: Asteria Village (nama sementara).
+Lokasi yang bisa dimasuki: kamar, ruang makan, halaman, gudang perkakas, jalan desa, pagar dekat sumur, ladang, kebun belakang, rumah Pak Wirya, ruang keluarga, gerbang desa.
+
+Tokoh dan cara bicara:
+- {player}: protagonis. Bicara singkat dan jujur. Lebih banyak mendengar daripada menjelaskan. Nama diisi pemain saat New Game.
+- Ayah: pendiam dan tenang. Kasih sayangnya terlihat dari tindakan, bukan kata-kata. Jawabannya biasanya pendek. Ia jarang menyebut perasaan secara langsung.
+- Ibu: hangat dan praktis. Banyak bertanya, sering memberi perintah kecil, dan langsung tahu kalau ada yang disembunyikan. Khawatirnya lebih sering terlihat lewat omelan.
+- Rian (12 tahun): ceria, ingin tahu, dan gengsian. Selalu menyangkal kalau ketakutan. Ingin terlihat dewasa, tapi masih kekanakan. Sayang kepada kakaknya meski jarang diucapkan.
+- Pak Wirya (tetangga): tua, sering mengeluh soal punggungnya, tapi baik hati.
+- Pedagang keliling: ramah, suka bercerita, sumber informasi tentang Eldoria.
+- Sena, Dion, Elda, Marla: NPC Guild yang sudah ada di game. Muncul lagi di Chapter 1.
+
+3. URUTAN CERITA
+
+PROLOG
+
+Scene 0.1 — Pagi di kamar
+Pemain bangun di kamarnya. Bisa memeriksa meja (peta desa lama yang dulu digambar bersama Rian, sekarang garisnya sudah pudar) dan jendela. Ibu memanggil untuk sarapan. Tujuan: keluar kamar.
+
+Scene 0.2 — Sarapan
+Keluarga makan bersama. Rian menggoda kakaknya karena bangun siang, lalu bertengkar kecil soal roti. Ayah bilang ada pekerjaan di ladang dan meminta pemain membantu. Ibu meminta pemain mengambil sayur di kebun belakang setelahnya. Di meja ada selebaran pedagang yang belum dibaca Ayah. Rian sempat menyentuhnya dan langsung diminta meletakkan kembali.
+
+Tujuan berikutnya: ambil perkakas di gudang dan antarkan ke ladang.
+
+Scene 0.3 — Pagar dan slime
+Dalam perjalanan dari gudang ke ladang, pemain melewati pagar dekat sumur. Rian ternyata mengikuti diam-diam. Seekor slime muncul dan mengejar Rian. Pemain harus melawan slime itu dengan pedang (J). Ini pertarungan pertama dan tutorial pertempuran.
+
+Setelah slime kalah, Rian tampak sangat terkejut tapi berpura-pura tidak takut.
+
+Scene 0.4 — Ladang
+Ayah sudah menunggu. Ia melihat keributan dari jauh dan bertanya apakah keduanya baik-baik saja. Pemain menjawab bahwa semuanya aman. Ayah menerima perkakas tanpa banyak bicara dan memberi sedikit uang sebagai upah.
+
+Tujuan berikutnya: petik sayur di kebun belakang untuk ibu.
+
+Scene 0.5 — Kebun belakang dan Ibu
+Ibu menerima sayur dan memuji pemain. Ia lalu bertanya apakah Rian baik-baik saja, karena baju adiknya kotor. Pemain bisa menjawab jujur atau menutupinya. Ibu tahu jawaban yang disembunyikan, tapi tidak memaksa.
+
+Side Quest 0.A — Pak Wirya dan ember (opsional)
+Ember Pak Wirya jatuh ke sumur. Pemain mengambilkannya dan menerima hadiah kecil.
+
+Scene 0.6 — Sore: Rian di pagar
+Rian duduk di pagar, pura-pura sibuk dengan ranting. Ia menceritakan selebaran pedagang: pendaftaran petualang di Guild Eldoria, dengan syarat umur minimal lima belas tahun. Ia ingin ikut, dan ingin tahu apakah kakaknya masih mau pergi. Ia juga memintanya bercerita tentang kota nanti. Tapi ia belum boleh pergi, jadi kakaknya yang harus pergi dulu.
+
+Scene 0.7 — Malam: bicara dengan orang tua
+Pemain menemui Ayah dan Ibu di ruang keluarga. Ia menceritakan slime di pagar, dan keinginannya untuk belajar bertarung dan mendaftar di Guild Eldoria.
+
+Ayah diam cukup lama. Ibu bertanya apakah keputusan ini sudah dipikirkan. Setelah itu percakapan bercabang (lihat bagian Flag):
+- Versi A: pemain ingin melindungi desa. Ayah tampak lebih yakin dan menyebut bahwa ia pernah berharap ada yang melakukannya.
+- Versi B: pemain ingin melihat dunia dulu lalu pulang. Ibu tampak lebih khawatir, tapi tetap mengizinkan.
+
+Keduanya berakhir dengan keputusan yang sama: berangkat setelah matahari terbit.
+
+Scene 0.8 — Perpisahan pagi hari
+Ibu memberi bekal dan ramuan dari Bu Sari, tetangga yang pandai meracik. Ayah memberi pisau tua miliknya. Pemain sempat diingatkan agar mundur kalau keadaan berbahaya.
+
+Rian datang terlambat, terengah-engah. Ia memberi gantungan kayu yang diukirnya sendiri dan meminta kakaknya berjanji untuk pulang. Pemain berjanji akan berusaha pulang dengan selamat. Ibu menegur Rian agar tidak membuat kakaknya makin berat untuk pergi. Rian menjawab bahwa ia hanya tidak ingin kakaknya lupa.
+
+Scene 0.9 — Gerbang desa
+Pemain melewati gerbang. Dari kejauhan Rian berteriak mengingatkan agar tidak lupa bercerita. Pemain melanjutkan perjalanan.
+Akhir prolog. Title card: CHAPTER 1 — PERJALANAN PERTAMA.
+
+CHAPTER 1 (AWAL)
+
+Scene 1.1 — Jalan hutan
+Pemain bertemu pedagang yang roda gerobaknya patah dan dikelilingi beberapa slime. Pemain membantu mengusir slime dan belajar memakai cahaya (K) untuk menghentikan musuh yang mendekat. Pedagang memberi tahu bahwa Eldoria sudah dekat dan menyebut bahwa penjaga gerbang bernama Elda.
+
+Scene 1.2 — Persinggahan dengan Sena dan Dion
+Di jalan menuju Eldoria, pemain bertemu Sena dan Dion yang sedang menjalankan misi pengantar. Sena mengajak pemain ikut. Dion memperkenalkan dirinya dengan sepatu bolong sebagai bahan candaan. Ini cara memperkenalkan Guild tanpa ceramah panjang.
+
+Scene 1.3 — Gerbang Eldoria
+Elda, penjaga gerbang yang pemalu, memeriksa pemain. Ia memberi tahu bahwa Guild ada di dekat air mancur. Pemain pertama kali melihat kota besar.
+
+Scene 1.4 — Guild Eldoria
+Pemain masuk ke Guild dan bertemu Marla. Dialog pendaftaran berjalan seperti biasa (marla_register). Setelah itu, bila pemain membawa gantungan dari Rian, Marla menyebutnya dan itu menjadi pengingat rumah.
+
+Tujuan Chapter 1 berikutnya tidak dibahas di sini.
+
+4. QUEST
+
+Main Quest 0.1 — Bangun dan bersiap
+Objective: keluar kamar dan temui keluarga di ruang makan.
+Reward: tidak ada. Tutorial interaksi dan dialog.
+
+Main Quest 0.2 — Antar perkakas ke ladang
+Objective: ambil perkakas di gudang, antarkan ke ladang. Di tengah jalan akan ada pertarungan.
+Reward: sedikit uang, EXP tutorial.
+
+Main Quest 0.3 — Petik sayur untuk ibu
+Objective: petik sayur di kebun belakang dan serahkan ke ibu.
+Reward: makanan, EXP tutorial.
+
+Side Quest 0.A — Ember Pak Wirya (opsional)
+Objective: ambil ember yang jatuh ke sumur.
+Reward: Gold kecil. Tidak mengunci quest utama.
+
+Main Quest 0.4 — Bicara dengan Rian
+Objective: temui Rian di pagar sore hari.
+Reward: membuka flag rian_tahu_selebaran.
+
+Main Quest 0.5 — Bicara dengan orang tua
+Objective: sampaikan keinginan untuk berangkat.
+Reward: membuka scene perpisahan.
+
+Main Quest 0.6 — Tinggalkan desa
+Objective: terima bekal dan pisau dari ayah, temui Rian, lalu keluar lewat gerbang.
+Reward: item awal dan akses ke Chapter 1.
+
+5. TUTORIAL GAMEPLAY
+- Gerak dan lari: di prolog (kamar, halaman, jalan).
+- Interaksi dan dialog: sejak scene 0.1.
+- Inventory: setelah ambil perkakas di 0.2. Pemain bisa menggunakan ramuan.
+- Pertarungan pertama: pedang (J) melawan slime di pagar, scene 0.3.
+- Cahaya (K): dikenalkan di Chapter 1, scene 1.1.
+- Quest: objective ditampilkan di layar setiap berpindah tujuan.
+- Save: autosave aktif sejak scene 0.2, dan simpan manual di scene 0.8.
+
+6. FLAG DAN KONDISI CERITA
+- player_name (diisi saat New Game)
+- pro_sarapan_selesai
+- pro_perkakas_diantar
+- pro_slime_pagar_selesai
+- pro_sayur_diantar
+- pro_wirya_selesai (opsional)
+- rian_tahu_selebaran
+- pro_malam_pilihan: "A" (melindungi desa) atau "B" (lihat dunia dulu). Hanya ditulis di Scene 0.7.
+- parent_trust: naik 1 untuk pilihan A, turun 1 untuk pilihan B. Mengubah nada Ayah dan Ibu di Scene 0.8.
+- item_pisau_ayah (tidak bisa dijual)
+- item_charm_rian (tidak bisa dijual)
+- item_ramuan_bu_sari (ramuan dasar)
+- pro_selesai
+
+Catatan: sistem pilihan dialog belum ada di game. Sampai sistem itu dibuat, pilihan di Scene 0.7 diisi dengan versi default (Versi A), dan Versi B disimpan sebagai blok terpisah di naskah dialog.
+
+7. CATATAN IMPLEMENTASI
+- Nama pemain diminta saat New Game dan dipakai di seluruh dialog sebagai {player}.
+- Dialog opsional (Pak Wirya) tidak boleh mengunci progres utama.
+- Pemain tidak bisa meninggalkan desa sebelum Scene 0.8 selesai. Gerbang dikunci dengan flag.
+- Item charm dan pisau bersifat key item dan tidak bisa dijual.
+- Slime di Scene 0.3 wajib dikalahkan agar cerita berjalan. Kalau pemain mati, ulang dari awal scene.
+- Nama Rian, Pak Wirya, Bu Sari, dan Pedagang bersifat sementara.

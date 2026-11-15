@@ -1,0 +1,229 @@
+# SHIROAKARI — PROLOG & AWAL CHAPTER 1: NASKAH DIALOG
+# Versi: Draft 2.0
+#
+# FORMAT (sesuai parser game di game.gd):
+#   [id_dialog]          -> awal satu blok dialog
+#   Nama: teks           -> satu baris dialog (pemisah pertama adalah ":")
+#   {player}             -> diganti nama pemain (dipakai di nama dan teks)
+#   # ...                -> komentar, diabaikan game. Dipakai untuk stage direction.
+#
+# CATATAN:
+# - Sistem pilihan dialog belum ada. Blok berawalan [pro_malam_A] dan [pro_malam_B] disiapkan
+#   untuk nanti. Sampai sistem itu dibuat, game memakai [pro_malam_A] saja.
+# - Nama adik: Rian (sementara).
+# - Blok sena, dion, elda, marla yang sudah ada di id.txt tetap dipakai; blok ch1_* di bawah
+#   adalah versi Chapter 1 yang menyambung ke sana.
+
+# ===================== PROLOG =====================
+
+[pro_kamar_ibu]
+# Ibu memanggil dari luar kamar. Objective: keluar kamar.
+Ibu: {player}! Sudah bangun belum? Sarapannya hampir matang.
+Rian: Dia pasti masih tidur! Aku sudah duduk dari tadi, lho.
+Ibu: Rian, jangan ganggu kakakmu. Cepat turun, {player}.
+
+[pro_meja_peta]
+# Interaksi opsional dengan meja.
+{player}: Peta desa yang kugambar bersama Rian waktu kecil. Garisnya sudah pudar.
+{player}: Dia pasti masih ingat tempat-tempat yang kami tandai dulu.
+
+[pro_jendela]
+# Interaksi opsional dengan jendela.
+{player}: Ladang di luar sudah berembun. Hari yang tenang, seperti biasa.
+
+[pro_sarapan]
+# Keluarga di ruang makan. Ayah sedang membaca selebaran dan Rian menyentuhnya.
+Ibu: Nah, akhirnya turun juga. Duduk, makanannya masih hangat.
+Rian: Kakak lama sekali. Aku hampir habis.
+{player}: Kamu makan seperti dikejar ayam.
+Rian: Ya habis. Kalau kelamaan, jatahku nanti diambil Ayah.
+Ayah: Ayah tidak pernah mengambil jatahmu.
+Rian: Roti kemarin hilang, lho.
+Ayah: Kamu sendiri yang makan, lalu lupa.
+Ibu: Sudah, sudah. Jangan ribut di meja makan.
+# Rian menyentuh selebaran. Ayah meletakkannya lagi tanpa bicara.
+Rian: Itu apa, Yah? Aku boleh lihat?
+Ayah: Bukan urusan anak kecil. Makan saja.
+Rian: Aku bukan anak kecil!
+Ayah: Ladang di timur butuh tenaga hari ini. Setelah makan, bantu Ayah sebentar.
+{player}: Baik, Yah. Perkakasnya di mana?
+Ayah: Gudang. Bawa ke ladang. Jangan lewat jalan yang becek.
+Ibu: Dan setelahnya, tolong petik sayur di kebun belakang untukku, ya.
+{player}: Iya, Bu.
+
+[pro_gudang]
+# Interaksi dengan perkakas di gudang. Objective: antar ke ladang.
+{player}: Cangkul, sabit, dan karung. Semuanya masih utuh.
+
+[pro_slime_pagar_awal]
+# Dipicu saat pemain mendekati pagar dekat sumur. Rian muncul dari balik pagar.
+Rian: Kak! Ternyata benar kakak lewat sini!
+{player}: Rian? Kamu mengikutiku?
+Rian: Nggak! Aku cuma kebetulan lewat!
+# Slime muncul. Pertarungan dimulai. Dialog ini dipicu sebelum pertarungan.
+Rian: Eh, itu apa?!
+{player}: Mundur, Rian. Biar aku yang hadapi.
+
+[pro_slime_pagar_selesai]
+# Setelah slime kalah.
+Rian: Aku tidak takut, ya! Aku cuma kaget tadi.
+{player}: Kakimu gemetar.
+Rian: Itu karena... karena tanahnya licin!
+{player}: Tanahnya kering, Rian.
+Rian: Diam ah! Jangan bilang Ibu.
+
+[pro_ayah_ladang_awal]
+# Ayah di ladang. Dia mendengar keributan dari jauh.
+Ayah: Kamu lambat. Tapi perkakasnya utuh.
+Ayah: Tadi ada suara ribut dari arah pagar. Kamu baik-baik saja?
+{player}: Aku baik, Yah. Rian juga.
+Ayah: Hm.
+# Diam sebentar, lalu memberi uang.
+Ayah: Ini upahmu. Jangan dibelanjakan semuanya.
+{player}: Terima kasih, Yah.
+
+[pro_ibu_sayur_awal]
+# Pemain kembali dengan sayur dari kebun belakang.
+Ibu: Sudah petik? Bagus. Taruh di meja dapur saja.
+Ibu: Oh, dan tadi Rian lewat sini dengan baju kotor. Kamu lihat dia?
+{player}: Dia... baik-baik saja, Bu.
+Ibu: Kamu memang kakak yang baik, dan tetap menutupi dia, ya.
+
+[pro_wirya_ember]
+# Side quest opsional. Pak Wirya dekat sumur.
+Pak Wirya: Oh, {player}! Tolong dong. Embernya jatuh ke sumur.
+Pak Wirya: Punggungku sudah tidak kuat membungkuk lagi.
+{player}: Biar kuambilkan, Pak.
+
+[pro_wirya_selesai]
+# Setelah ember diambil.
+Pak Wirya: Wah, cekatan juga kamu! Ini untukmu.
+Pak Wirya: Jangan bilang istriku, ya. Dia kira aku belum bayar utang ember ke tetangga.
+
+[pro_rian_sore]
+# Sore hari. Rian duduk di pagar, pura-pura sibuk dengan ranting.
+Rian: Kak. Lama sekali.
+{player}: Kamu kan pulang duluan tadi.
+Rian: Aku cuma... mau cek sesuatu. Ada pedagang tadi siang. Dia bawa selebaran.
+Rian: Katanya Guild di Eldoria buka pendaftaran petualang. Syaratnya lima belas tahun ke atas.
+{player}: Dan kamu mau daftar?
+Rian: Nanti. Kalau sudah lima belas tahun.
+{player}: Tapi tadi kamu bilang kamu bukan anak kecil.
+Rian: Ya itu kan... beda.
+# Diam sebentar. Rian menatap jalan keluar desa.
+Rian: Kakak masih mau lihat Eldoria, kan? Waktu kecil dulu kita pernah janji.
+{player}: Entahlah. Aku belum yakin.
+Rian: Kalau kakak pergi, ceritakan semuanya. Jangan cuma monster. Makanan, kotanya, orang-orangnya juga.
+{player}: Kenapa kamu tidak ikut saja?
+Rian: Aku belum boleh pergi.
+Rian: Jadi kakak saja yang pergi dulu. Nanti aku nyusul.
+
+[pro_malam_ayah_mulai]
+# Malam. Ayah dan Ibu di ruang keluarga. Pemain menghampiri mereka.
+{player}: Yah, Bu. Ada yang mau kubicarakan.
+Ibu: Duduk dulu. Kamu kelihatan serius sekali.
+{player}: Tadi di pagar ada slime. Rian hampir kena.
+Ibu: Rian kena?
+{player}: Tidak, Bu. Dia baik-baik saja. Tapi aku sadar aku tidak bisa terus begini.
+Ayah: Desa ini punya penjaga. Sudah bertahun-tahun.
+{player}: Penjaganya sudah tua, Yah. Dan aku ingin belajar bertarung. Aku juga ingin mendaftar di Guild Eldoria.
+# Diam cukup lama. Ayah menaruh pisau yang sedang diasah.
+Ayah: Sejak kapan kamu memikirkan itu?
+{player}: Sudah cukup lama. Hari ini aku makin yakin.
+Ibu: Dunia luar tidak selalu ramah. Ada monster, penjahat, banyak hal yang belum kamu tahu.
+{player}: Aku tahu, Bu. Aku juga takut. Tapi aku ingin mencoba.
+
+[pro_malam_A]
+# PILIHAN A (versi default): pemain ingin melindungi desa.
+Ayah: Hm. Dulu aku juga pernah berharap ada yang mau melakukannya.
+Ayah: Kalau memang itu niatmu, berangkatlah dengan benar.
+Ibu: Tapi berjanjilah untuk menjaga diri. Jangan memaksakan diri hanya untuk membuktikan sesuatu.
+{player}: Aku berjanji.
+
+[pro_malam_B]
+# PILIHAN B (disiapkan untuk sistem pilihan nanti): pemain ingin melihat dunia dulu lalu pulang.
+Ayah: Melihat dunia, lalu pulang. Itu kedengarannya lebih mudah diucapkan daripada dilakukan.
+Ibu: Aku khawatir, tapi aku tidak akan menahanmu. Kembalilah dengan selamat.
+{player}: Aku akan pulang, Bu.
+
+[pro_malam_akhir]
+# Akhir percakapan malam. Dua versi di atas bertemu di sini.
+Ayah: Berangkatlah setelah matahari terbit. Malam ini istirahatlah. Besok kita siapkan keperluanmu.
+Ibu: Dan jangan tidur larut. Bekalmu harus Ibu siapkan dulu.
+
+[pro_perpisahan_pagi]
+# Pagi hari. Keluarga di halaman. Pemain sudah membawa tas.
+Ibu: Bekalnya sudah Ibu bungkus. Roti, sayur, sama telur rebus. Makan di jalan, ya.
+Ibu: Ini ramuan dari Bu Sari. Kalau ada luka kecil, oleskan saja.
+{player}: Terima kasih, Bu.
+Ayah: Pisau ini punyaku waktu muda. Tajamnya masih bagus.
+Ayah: Jangan dipakai untuk main-main.
+{player}: Baik, Yah.
+Ayah: Kalau keadaannya terlalu berat, mundur. Tidak ada aib dalam pulang dengan selamat.
+# Ayah menepuk pundak pemain sebentar lalu melepaskannya.
+Ayah: Jaga dirimu.
+
+[pro_perpisahan_rian]
+# Rian datang terlambat, terengah-engah.
+Rian: Kak! Tunggu!
+{player}: Kupikir kamu tidak akan bangun pagi.
+Rian: Aku tidak tidur, tahu. Nih.
+# Rian mengulurkan gantungan kayu yang diukir sendiri.
+Rian: Ini gantungan dari kayu. Aku ukir sendiri semalam. Jelek ya?
+{player}: Jelek sekali. Tapi aku simpan.
+Rian: Jangan cuma disimpan! Dipakai!
+{player}: Iya, iya.
+Rian: Dan pulang. Janji!
+{player}: Aku janji akan berusaha pulang dengan selamat.
+Rian: Bukan cuma berusaha! Pulang!
+Ibu: Rian, jangan membuat kakakmu makin berat untuk pergi.
+Rian: Aku cuma tidak mau kakak lupa sama kami.
+{player}: Aku tidak akan lupa. Kalian alasanku untuk pulang.
+
+[pro_gerbang]
+# Pemain melewati gerbang desa. Objective: pergi ke Eldoria.
+Narasi: Gerbang desa berderit di belakang punggungmu.
+Rian: Kak! Jangan cuma bawa cerita monster, ya!
+Narasi: Hari itu, seorang anak desa berangkat dengan bekal, pisau tua, dan janji untuk pulang.
+# FADE OUT. Title card: CHAPTER 1 — PERJALANAN PERTAMA.
+
+# ===================== CHAPTER 1 (AWAL) =====================
+
+[ch1_gerobak_pedagang]
+# Jalan hutan. Pedagang di sebelah gerobak yang patah, dikelilingi slime.
+Pedagang: Tolong! Rodaku patah dan slime-slime ini mengepungku!
+{player}: Mundur, Pak. Biar aku bantu.
+Pedagang: Kamu? Masih muda sekali. Baiklah, aku percaya. Pakai cahaya kalau mereka terlalu dekat.
+
+[ch1_gerobak_selesai]
+# Setelah slime dikalahkan.
+Pedagang: Terima kasih banyak. Kamu mau ke Eldoria?
+{player}: Iya. Berapa lama lagi?
+Pedagang: Sebentar lagi sampai. Hati-hati di gerbang, yang jaga Elda. Dia baik, tapi pemalu sekali.
+
+[ch1_sena_dion]
+# Di jalan menuju Eldoria.
+Sena: Hei! Kamu juga mau ke Eldoria? Aku Sena. Kami sedang mengantar barang. Mau ikut?
+Dion: Sena, jangan tarik-tarik orang begitu. Halo. Aku Dion.
+Dion: Sepatuku memang bolong, tapi aku anggota Guild juga, kok.
+Sena: Dia bilang begitu tiap hari. Kamu siapa?
+{player}: Aku {player}.
+Sena: Oke, {player}! Ayo jalan bareng!
+
+[ch1_elda_gerbang]
+# Gerbang Eldoria.
+Elda: Be-berhenti dulu. Mau masuk Eldoria?
+{player}: Iya. Aku mau daftar di Guild.
+Elda: Oh... Guild? Marla ada di dekat air mancur, di dalam sana.
+Elda: Se-selamat datang di Eldoria. Kamu kelihatan sudah jauh berjalan.
+
+[ch1_marla_gantungan]
+# Dipicu di Guild bila pemain punya item_charm_rian. Marla menyebut gantungan itu.
+Marla: Gantungan kayu itu... buatan tangan, ya? Pasti dari orang yang menyayangimu.
+{player}: Adikku yang membuatnya.
+Marla: Simpan baik-baik. Hal kecil seperti itu sering jadi alasan orang untuk bertahan.
+
+[ch1_marla_setelah_daftar]
+# Setelah marla_register selesai (pendaftaran berhasil).
+Marla: Selamat, {player}. Kamu resmi terdaftar. Arena Latihan di belakang sudah bisa dipakai.
+Marla: Oh, dan sebelum kamu pergi lebih jauh, makan dulu. Wajahmu terlihat seperti orang yang belum makan sejak pagi.
