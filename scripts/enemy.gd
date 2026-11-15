@@ -27,7 +27,17 @@ const TYPES := {
     "chimera": {"name": "Chimera", "hp": 10, "xp": 20, "speed": 62.0, "touch": 3, "rec": 10, "min_lv": 8, "weight": 2, "beh": "lunge", "r": 9, "h": 34,
         "windup": 0.5, "lunge_speed": 230.0, "lunge_time": 0.32, "trigger": 100.0, "lunge_cd": 1.4},
     "death_knight": {"name": "Ksatria Maut", "hp": 30, "xp": 60, "speed": 48.0, "touch": 4, "rec": 12, "min_lv": 9, "weight": 0, "beh": "lunge", "r": 12, "h": 52, "boss": true,
-        "windup": 0.5, "lunge_speed": 260.0, "lunge_time": 0.35, "trigger": 110.0, "lunge_cd": 1.6}}
+        "windup": 0.5, "lunge_speed": 260.0, "lunge_time": 0.35, "trigger": 110.0, "lunge_cd": 1.6},
+    # --- Tier 2 (Lv 10-20). Belum punya sprite: tampil sebagai lingkaran berwarna sampai gambar dibuat ---
+    "dark_wolf": {"name": "Serigala Kelam", "hp": 14, "xp": 30, "speed": 80.0, "touch": 3, "rec": 11, "min_lv": 10, "weight": 2, "beh": "lunge", "r": 8, "color": Color("3a2d5c"),
+        "windup": 0.3, "lunge_speed": 260.0, "lunge_time": 0.3, "trigger": 100.0, "lunge_cd": 0.9},
+    "troll": {"name": "Troll Batu", "hp": 22, "xp": 45, "speed": 36.0, "touch": 3, "rec": 13, "min_lv": 12, "weight": 2, "beh": "chase", "r": 11, "color": Color("6b7a5a")},
+    "wraith": {"name": "Hantu Kelana", "hp": 12, "xp": 40, "speed": 58.0, "touch": 2, "rec": 14, "min_lv": 13, "weight": 2, "beh": "ranged", "r": 7, "color": Color("9fd3e8"),
+        "shot_cd": 2.2, "shot_speed": 130.0, "shot_dmg": 2, "keep": 120.0, "windup": 0.4},
+    "warlord": {"name": "Panglima Orc", "hp": 18, "xp": 50, "speed": 44.0, "touch": 3, "rec": 15, "min_lv": 14, "weight": 2, "beh": "chase", "r": 10, "color": Color("8a3b2e")},
+    "gargoyle": {"name": "Gargoyle", "hp": 16, "xp": 55, "speed": 60.0, "touch": 3, "rec": 16, "min_lv": 16, "weight": 2, "beh": "lunge", "r": 9, "color": Color("7d7f8c"),
+        "windup": 0.45, "lunge_speed": 230.0, "lunge_time": 0.3, "trigger": 90.0, "lunge_cd": 1.3},
+    "stone_golem": {"name": "Golem Batu", "hp": 26, "xp": 70, "speed": 30.0, "touch": 4, "rec": 19, "min_lv": 18, "weight": 2, "beh": "chase", "r": 12, "color": Color("5c5f6e")}}
 # sprite pose "b" yang aslinya menghadap kanan (supaya flip-nya benar)
 const NATIVE_RIGHT_B := ["common_beast", "wolf", "orc_archer"]
 const AGGRO := 150.0
@@ -68,6 +78,20 @@ static func kinds_for_level(lv: int) -> Array:
         if lv >= int(c["min_lv"]) and lv <= int(c["min_lv"]) + 5:
             for i in int(c["weight"]):
                 pool.append(k)
+    if pool.is_empty():
+        # Tidak ada musuh di jendela level ini (mis. Lv 14+): pakai jenis non-bos dengan min_lv tertinggi
+        # yang sudah lewat, supaya arena tidak jatuh ke Slime Biru (XP 1).
+        var best := -1
+        for k in TYPES:
+            var c: Dictionary = TYPES[k]
+            if c.get("boss", false) or int(c["min_lv"]) > lv:
+                continue
+            best = maxi(best, int(c["min_lv"]))
+        for k in TYPES:
+            var c: Dictionary = TYPES[k]
+            if not c.get("boss", false) and int(c["min_lv"]) == best:
+                for i in int(c["weight"]):
+                    pool.append(k)
     if pool.is_empty():
         pool.append("blue")
     return pool

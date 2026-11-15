@@ -133,7 +133,7 @@ func _process(delta):
         hud.end_dialog()
     if Input.is_action_just_pressed("interact"):
         if hud.active:
-            hud.advance()
+            hud.interact()
         else:
             target = _nearest_npc()
             if target:

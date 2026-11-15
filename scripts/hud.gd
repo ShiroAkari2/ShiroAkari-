@@ -10,6 +10,12 @@ var name_lbl: Label
 var text_lbl: Label
 var info_lbl: Label
 var note_lbl: Label
+var typing := false
+var shown := 0.0
+var line_t := 0.0
+const CHAR_SPEED := 40.0      # huruf per detik
+const AUTO_MIN := 2.0         # detik minimum sebelum lanjut otomatis
+const AUTO_PER_CHAR := 0.05   # tambahan detik per huruf (waktu baca)
 
 func _ready():
     var bar := Control.new()
@@ -52,6 +58,17 @@ func _on_xp(amount, leveled):
         notice("+%d XP" % amount)
 
 func _process(delta):
+    if active:
+        if typing:
+            shown += CHAR_SPEED * delta
+            if shown >= float(text_lbl.text.length()):
+                _finish_line()
+            else:
+                text_lbl.visible_characters = int(shown)
+        else:
+            line_t += delta
+            if line_t >= AUTO_MIN + AUTO_PER_CHAR * float(text_lbl.text.length()):
+                advance()
     if Game.level >= Game.MAX_LEVEL:
         info_lbl.text = "%s  Lv %d (MAKS)" % [Game.player_name, Game.level]
     else:
@@ -76,6 +93,21 @@ func start_dialog(id: String):
     panel.visible = true
     _show()
 
+# Dipanggil saat tombol interaksi ditekan: saat teks masih mengetik, tampilkan semuanya dulu; kalau sudah penuh, lanjut.
+func interact():
+    if not active:
+        return
+    if typing:
+        _finish_line()
+    else:
+        advance()
+
+func _finish_line():
+    typing = false
+    shown = float(text_lbl.text.length())
+    text_lbl.visible_characters = -1
+    line_t = 0.0
+
 func advance():
     idx += 1
     if idx >= lines.size():
@@ -94,3 +126,7 @@ func end_dialog():
 func _show():
     name_lbl.text = lines[idx].name
     text_lbl.text = lines[idx].text
+    text_lbl.visible_characters = 0
+    typing = true
+    shown = 0.0
+    line_t = 0.0

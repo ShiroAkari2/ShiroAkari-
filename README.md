@@ -21,9 +21,19 @@ Daftar ke Marla -> Arena Latihan terbuka (slime muncul terus, maks 4 sekaligus) 
 | 7 | 116 | 248 | 8,0 | 7 | 3 | 3 |
 | 8 | 148 | 364 | 8,5 | 7 | 3 | 3 |
 | 9 | 184 | 512 | 9,0 | 8 | 3 | 4 |
-| 10 | MAKS | 696 | 9,5 | 8 | 3 | 4 |
+| 10 | 224 | 696 | 9,5 | 8 | 3 | 4 |
+| 11 | 268 | 920 | 10,0 | 8 | 3 | 4 |
+| 12 | 316 | 1188 | 10,5 | 9 | 3 | 4 |
+| 13 | 368 | 1504 | 11,0 | 9 | 4 | 4 |
+| 14 | 424 | 1872 | 11,5 | 9 | 4 | 4 |
+| 15 | 484 | 2296 | 12,0 | 10 | 4 | 5 |
+| 16 | 548 | 2780 | 12,5 | 10 | 4 | 5 |
+| 17 | 616 | 3328 | 13,0 | 10 | 4 | 5 |
+| 18 | 688 | 3944 | 13,5 | 11 | 5 | 5 |
+| 19 | 764 | 4632 | 14,0 | 11 | 5 | 5 |
+| 20 | MAKS | 5396 | 14,5 | 11 | 5 | 5 |
 
-Rumus XP: `8 + 6n + 2n^2` dengan n = level - 1. Naik level memulihkan HP & mana penuh.
+Rumus XP: `8 + 6n + 2n^2` dengan n = level - 1 (berlaku sampai Lv 19 -> 20). Naik level memulihkan HP & mana penuh.
 
 | Musuh | HP | XP | Kecepatan | Sentuhan | Perilaku | Muncul mulai |
 |---|---|---|---|---|---|---|
@@ -42,8 +52,14 @@ Rumus XP: `8 + 6n + 2n^2` dengan n = level - 1. Naik level memulihkan HP & mana 
 | Ksatria Orc | 12 | 18 | 34 | 1,5 bar | mengejar (sangat tebal) | Lv 8 |
 | Chimera | 10 | 20 | 62 | 1,5 bar | menerjang | Lv 8 |
 | **Ksatria Maut (bos)** | 30 | 60 | 48 | 2 bar | menerjang; muncul tiap ~50 dtk, satu sekaligus | Lv 9 |
+| Serigala Kelam | 14 | 30 | 80 | 1,5 bar | menerjang | Lv 10 |
+| Troll Batu | 22 | 45 | 36 | 1,5 bar | mengejar (lambat, tebal) | Lv 12 |
+| Hantu Kelana | 12 | 40 | 58 | 1 bar (tembakan 1 bar) | menjaga jarak, menembak | Lv 13 |
+| Panglima Orc | 18 | 50 | 44 | 1,5 bar | mengejar | Lv 14 |
+| Gargoyle | 16 | 55 | 60 | 1,5 bar | menerjang | Lv 16 |
+| Golem Batu | 26 | 70 | 30 | 2 bar | mengejar (sangat lambat, sangat tebal) | Lv 18 |
 
-Musuh yang sudah lewat 5 level dari level munculnya berhenti muncul, jadi arena selalu berisi lawan yang sepadan. Semua musuh didefinisikan di tabel `TYPES` di `scripts/enemy.gd` (tambah musuh = tambah satu baris + dua gambar `assets/enemies/<nama>_a.png` dan `_b.png`).
+Musuh yang sudah lewat 5 level dari level munculnya berhenti muncul, jadi arena berisi lawan yang sepadan. Bila tidak ada musuh yang cocok di suatu level, arena memakai jenis non-bos dengan level tertinggi yang sudah lewat (cadangan; sejak tier 2 semua level 1-20 sudah punya musuh). Semua musuh didefinisikan di tabel `TYPES` di `scripts/enemy.gd` (tambah musuh = tambah satu baris + dua gambar `assets/enemies/<nama>_a.png` dan `_b.png`).
 
 - Pemain 110 px/dtk. Kena serangan = knockback + kebal 1 detik.
 - XP musuh turun 15% per level di atas level rekomendasi (minimal 20%): anti-grinding.

@@ -3,7 +3,7 @@ signal xp_gained(amount, leveled)
 
 const SAVE_PATH := "user://save.json"
 const SAVE_VERSION := 2
-const MAX_LEVEL := 10
+const MAX_LEVEL := 20
 const DEATH_XP_LOSS := 0.25   # persen XP level berjalan yang hilang saat pingsan
 
 var player_name := "Hero"
@@ -72,7 +72,7 @@ func get_dialog(id: String) -> Array:
     return out
 
 # ---------- Statistik & progresi ----------
-# XP untuk naik dari level `lv` ke lv+1: 8, 16, 28, 44, 64, 88, 116, 148, 184 (total 696 sampai Lv 10).
+# XP untuk naik dari level `lv` ke lv+1: 8, 16, 28, ... 224 (Lv 10), ... 764 (Lv 19). Total ke Lv 20: 5396.
 func xp_needed(lv: int) -> int:
     if lv >= MAX_LEVEL:
         return 0
@@ -86,10 +86,10 @@ func max_mana() -> int:
     return 5 + int(floor(level / 3.0))   # +1 di Lv 3, 6, 9
 
 func sword_damage() -> int:
-    return 1 + (1 if level >= 3 else 0) + (1 if level >= 7 else 0)
+    return 1 + (1 if level >= 3 else 0) + (1 if level >= 7 else 0) + (1 if level >= 13 else 0) + (1 if level >= 18 else 0)
 
 func magic_damage() -> int:
-    return 2 + (1 if level >= 5 else 0) + (1 if level >= 9 else 0)
+    return 2 + (1 if level >= 5 else 0) + (1 if level >= 9 else 0) + (1 if level >= 15 else 0)
 
 # Musuh "level rekomendasi" rendah memberi XP makin sedikit saat level pemain lewat batas (anti-grinding).
 func xp_multiplier(rec_level: int) -> float:
@@ -103,7 +103,11 @@ func level_perk(lv: int) -> String:
         6: s += ", mana maks naik"
         7: s += ", pedang lebih kuat"
         9: s += ", cahaya & mana maks naik"
-        10: s += " - LEVEL MAKS!"
+        12: s += ", mana maks naik"
+        13: s += ", pedang lebih kuat"
+        15: s += ", cahaya & mana maks naik"
+        18: s += ", pedang & mana maks naik"
+        20: s += " - LEVEL MAKS!"
     return s
 
 func heal_full():
