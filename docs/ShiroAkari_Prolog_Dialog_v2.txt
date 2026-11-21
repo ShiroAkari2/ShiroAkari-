@@ -105,13 +105,13 @@ Pak Wirya: Jangan bilang istriku, ya. Dia kira aku belum bayar utang ember ke te
 Rian: Kak. Lama sekali.
 {player}: Kamu kan pulang duluan tadi.
 Rian: Aku cuma... mau cek sesuatu. Ada pedagang tadi siang. Dia bawa selebaran.
-Rian: Katanya Guild di Eldoria buka pendaftaran petualang. Syaratnya lima belas tahun ke atas.
+Rian: Katanya Guild di Meldon buka pendaftaran petualang. Syaratnya lima belas tahun ke atas.
 {player}: Dan kamu mau daftar?
 Rian: Nanti. Kalau sudah lima belas tahun.
 {player}: Tapi tadi kamu bilang kamu bukan anak kecil.
 Rian: Ya itu kan... beda.
 # Diam sebentar. Rian menatap jalan keluar desa.
-Rian: Kakak masih mau lihat Eldoria, kan? Waktu kecil dulu kita pernah janji.
+Rian: Kakak masih mau lihat Meldon, kan? Waktu kecil dulu kita pernah janji.
 {player}: Entahlah. Aku belum yakin.
 Rian: Kalau kakak pergi, ceritakan semuanya. Jangan cuma monster. Makanan, kotanya, orang-orangnya juga.
 {player}: Kenapa kamu tidak ikut saja?
@@ -126,7 +126,7 @@ Ibu: Duduk dulu. Kamu kelihatan serius sekali.
 Ibu: Rian kena?
 {player}: Tidak, Bu. Dia baik-baik saja. Tapi aku sadar aku tidak bisa terus begini.
 Ayah: Desa ini punya penjaga. Sudah bertahun-tahun.
-{player}: Penjaganya sudah tua, Yah. Dan aku ingin belajar bertarung. Aku juga ingin mendaftar di Guild Eldoria.
+{player}: Penjaganya sudah tua, Yah. Dan aku ingin belajar bertarung. Aku juga ingin mendaftar di Guild Meldon.
 # Diam cukup lama. Ayah menaruh pisau yang sedang diasah.
 Ayah: Sejak kapan kamu memikirkan itu?
 {player}: Sudah cukup lama. Hari ini aku makin yakin.
@@ -181,7 +181,7 @@ Rian: Aku cuma tidak mau kakak lupa sama kami.
 {player}: Aku tidak akan lupa. Kalian alasanku untuk pulang.
 
 [pro_gerbang]
-# Pemain melewati gerbang desa. Objective: pergi ke Eldoria.
+# Pemain melewati gerbang desa. Objective: pergi ke Meldon.
 Narasi: Gerbang desa berderit di belakang punggungmu.
 Rian: Kak! Jangan cuma bawa cerita monster, ya!
 Narasi: Hari itu, seorang anak desa berangkat dengan bekal, pisau tua, dan janji untuk pulang.
@@ -197,13 +197,13 @@ Pedagang: Kamu? Masih muda sekali. Baiklah, aku percaya. Pakai cahaya kalau mere
 
 [ch1_gerobak_selesai]
 # Setelah slime dikalahkan.
-Pedagang: Terima kasih banyak. Kamu mau ke Eldoria?
+Pedagang: Terima kasih banyak. Kamu mau ke Meldon?
 {player}: Iya. Berapa lama lagi?
 Pedagang: Sebentar lagi sampai. Hati-hati di gerbang, yang jaga Elda. Dia baik, tapi pemalu sekali.
 
 [ch1_sena_dion]
-# Di jalan menuju Eldoria.
-Sena: Hei! Kamu juga mau ke Eldoria? Aku Sena. Kami sedang mengantar barang. Mau ikut?
+# Di jalan menuju Meldon.
+Sena: Hei! Kamu juga mau ke Meldon? Aku Sena. Kami sedang mengantar barang. Mau ikut?
 Dion: Sena, jangan tarik-tarik orang begitu. Halo. Aku Dion.
 Dion: Sepatuku memang bolong, tapi aku anggota Guild juga, kok.
 Sena: Dia bilang begitu tiap hari. Kamu siapa?
@@ -211,11 +211,11 @@ Sena: Dia bilang begitu tiap hari. Kamu siapa?
 Sena: Oke, {player}! Ayo jalan bareng!
 
 [ch1_elda_gerbang]
-# Gerbang Eldoria.
-Elda: Be-berhenti dulu. Mau masuk Eldoria?
+# Gerbang Meldon.
+Elda: Be-berhenti dulu. Mau masuk Meldon?
 {player}: Iya. Aku mau daftar di Guild.
 Elda: Oh... Guild? Marla ada di dekat air mancur, di dalam sana.
-Elda: Se-selamat datang di Eldoria. Kamu kelihatan sudah jauh berjalan.
+Elda: Se-selamat datang di Meldon. Kamu kelihatan sudah jauh berjalan.
 
 [ch1_marla_gantungan]
 # Dipicu di Guild bila pemain punya item_charm_rian. Marla menyebut gantungan itu.

@@ -24,7 +24,8 @@ func _ready():
     add_child(b)
     var go := func():
         Game.new_game(le.text)
-        get_tree().change_scene_to_file("res://scenes/Guild.tscn")
+        Game.rumah_entry = Vector2(320, 430)
+        Game.goto("res://scenes/Rumah.tscn")   # petualangan baru mulai dari Rumah
     b.pressed.connect(go)
     le.text_submitted.connect(func(_t): go.call())
     le.grab_focus()

@@ -24,10 +24,12 @@ func _ready():
     Game.in_game = false
     if ResourceLoader.exists(TITLE_BG) and ResourceLoader.exists(MENU_BG):
         bg_rect = TextureRect.new()
-        bg_rect.texture = load(TITLE_BG) as Texture2D
-        bg_rect.size = Vector2(640, 360)
+        # urutan penting: expand_mode dulu, baru texture & size (kalau tidak, ukuran tertahan di ukuran gambar asli)
         bg_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
         bg_rect.stretch_mode = TextureRect.STRETCH_SCALE
+        bg_rect.custom_minimum_size = Vector2.ZERO
+        bg_rect.texture = load(TITLE_BG) as Texture2D
+        bg_rect.size = Vector2(640, 360)
         bg_rect.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
         add_child(bg_rect)
         menu_layer = Control.new()
@@ -143,15 +145,18 @@ func _new_game():
     if Game.has_save():
         var d := ConfirmationDialog.new()
         d.dialog_text = "Save lama akan ditimpa.\nLanjutkan Game Baru?"
-        d.confirmed.connect(func(): get_tree().change_scene_to_file("res://scenes/NameInput.tscn"))
+        d.confirmed.connect(func(): Game.goto("res://scenes/NameInput.tscn"))
         add_child(d)
         d.popup_centered()
     else:
-        get_tree().change_scene_to_file("res://scenes/NameInput.tscn")
+        Game.goto("res://scenes/NameInput.tscn")
 
 func _continue():
     if Game.load_game():
-        get_tree().change_scene_to_file("res://scenes/Guild.tscn")
+        if Game.flags.get("registered", false):
+            Game.goto("res://scenes/Guild.tscn")
+        else:
+            Game.goto("res://scenes/Rumah.tscn")   # belum mendaftar: mulai dari Rumah
 
 func _info(text: String):
     var d := AcceptDialog.new()

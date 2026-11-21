@@ -15,6 +15,13 @@ var flags := {}
 var lang := "id"
 var dialogs := {}
 var input_locked := false   # true saat dialog: pemain & musuh berhenti
+var guild_entry := Vector2(320, 760)   # posisi muncul di guild
+var pending_notice := ""                 # pesan yang ditampilkan di scene berikutnya
+var skotice_entry := Vector2(320, 150)   # posisi muncul di Kota Skotice
+var rumah_entry := Vector2(320, 430)     # posisi muncul di Rumah pemain (depan pintu)
+var desa_entry := Vector2(34, 292)       # posisi muncul di Desa (jalan barat)
+var jalan_entry := Vector2(140, 392)     # posisi muncul di Jalan ke Skotice (ujung barat)
+var busy := false           # true selama layar loading/pindah scene berjalan
 var in_game := false        # true saat berada di dunia game (untuk autosave)
 var _autosave_t := 0.0
 
@@ -33,12 +40,23 @@ func _notification(what):
     if what == NOTIFICATION_WM_CLOSE_REQUEST and in_game:
         save_game()
 
+# Pindah scene lewat layar loading (bar jalan sungguhan lewat ResourceLoader).
+func goto(path: String, min_time := 0.9):
+    if busy:
+        return
+    busy = true
+    input_locked = true
+    var ov = preload("res://scripts/loading_overlay.gd").new()
+    add_child(ov)
+    await ov.run(path, min_time)
+    busy = false
+
 func _setup_input():
     var map := {
         "up": [KEY_UP, KEY_W], "down": [KEY_DOWN, KEY_S],
         "left": [KEY_LEFT, KEY_A], "right": [KEY_RIGHT, KEY_D],
         "interact": [KEY_Z, KEY_SPACE, KEY_ENTER],
-        "sword": [KEY_J], "magic": [KEY_K]}
+        "sword": [KEY_J], "magic": [KEY_K], "world_map": [KEY_M]}
     for a in map:
         if not InputMap.has_action(a):
             InputMap.add_action(a)
@@ -166,3 +184,15 @@ func load_game() -> bool:
     mana = clampf(float(data.get("mana", max_mana())), 0.0, float(max_mana()))
     flags = data.get("flags", {})
     return true
+
+# Buka/tutup peta dunia (tombol M) sebagai lapisan di atas scene yang sedang berjalan.
+# here = nomor lokasi pemain di peta dunia (1 = Rumah, 2 = Desa, 3 = Jalan ke Skotice, 4 = Kota Skotice).
+func toggle_world_map(parent: Node, here := 4):
+    var old := get_tree().get_first_node_in_group("world_map")
+    if old:
+        old.queue_free()
+        input_locked = false
+        return
+    var m = preload("res://scripts/world_map.gd").new()
+    m.here = here
+    parent.add_child(m)

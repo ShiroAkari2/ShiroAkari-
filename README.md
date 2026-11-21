@@ -84,3 +84,65 @@ Musuh yang sudah lewat 5 level dari level munculnya berhenti muncul, jadi arena 
 1. Project > Export > Add > Web (unduh export templates bila diminta). Matikan **Thread Support**.
 2. Export ke folder `docs/` dengan nama `index.html`.
 3. Push ke GitHub, lalu Settings > Pages > Branch main, folder `/docs`.
+
+## Perubahan v9
+- **Guild Petualang** memakai gambar `assets/guild_bg.png` (640x960). Ruangan lebih tinggi dari layar; kamera mengikuti pemain ke atas/bawah. Tabrakan (dinding, meja, papan misi, meja resepsionis) ada di konstanta `WALLS` di `scripts/guild.gd`. Guild sekarang **zona aman**: tidak ada musuh.
+- **Padang Latihan** (`scenes/Field.tscn`, `scripts/field.gd`) = tempat bertarung. Pintu bawah guild menuju ke sana (setelah mendaftar di Marla); jalan ke atas untuk kembali. Gambar peta masih sederhana (digambar lewat kode).
+- **Sprite player** dipotong dari sheet: `assets/player/<kunci>_<n>.png`. Daftar animasi dan titik kaki ada di `scripts/player_meta.gd` (idle, jalan, pedang, sihir, kena hit; pose pingsan/kalah sudah ada filenya tapi belum dipakai).
+- **NPC**: Marla = `assets/npc/marla.png` (berkacamata), Sena = `npc06_pink`, Dion = `npc01_black`, Elda = `npc04_navy`. NPC lain (`npc02/03/07/08/09/10`) sudah dipotong dan siap dipakai.
+- **Musuh**: sprite slime biru/hijau/merah dan musuh Tier 2 (Serigala Kelam, Troll Batu, Hantu Kelana, Panglima Orc, Gargoyle, Golem Batu) sudah dipasang. Bug teks `\n` di daftar karakter diperbaiki.
+- Tinggi sprite musuh diatur lewat `"h"` di tabel `TYPES` (`scripts/enemy.gd`).
+
+## Catatan
+- Semua perubahan ditulis tanpa bisa menjalankan Godot, jadi bila muncul error merah, kirim teksnya.
+- Gambar yang dihasilkan generator AI perlu diperhatikan terhadap aturan jam/lomba yang kamu ikuti.
+
+## Update v10
+- Layar loading baru (`assets/loading_bg.png` + `scripts/loading_overlay.gd`): semua pindah scene lewat `Game.goto(path)`, bar berjalan sesuai progres load nyata.
+- Kota Skotice (`scenes/Skotice.tscn`, `scripts/skotice.gd`, `assets/skotice_bg.png`): zona aman. Area jalan diatur di `assets/skotice_mask.png` (80x120, 1 piksel = 8x8 px peta, putih = bisa dilewati). Mask dibuat otomatis dari warna jalan, jadi edit di editor gambar bila ada area yang kurang pas.
+- Alur: Menu -> NameInput -> Guild (daftar ke Marla) -> pintu bawah Guild -> Skotice -> gerbang bawah kota -> Padang Latihan (musuh). Dari Padang Latihan jalan ke atas = kembali ke Skotice; pintu Guild di atas Skotice = masuk Guild. Pingsan = kembali ke Guild.
+- `assets/guild_exterior.png`: tampak luar Guild (belum dipakai di kode, disimpan untuk referensi).
+
+## Update v10.1
+- NPC sekarang padat (tidak bisa ditembus): badan tabrakan di kaki NPC (`npc.gd`).
+- Papan pengumuman guild (2 buah, ada tanda "!") bisa diajak interaksi: dialog pembuka lalu 5 pengumuman bergantian. Dialognya di akhir `data/dialog/id.txt` (`papan_*`). Terima/tolak misi dan quest log belum ada.
+- Ukuran jendela game dikecilkan jadi 960x540 supaya muat di layar laptop. Di editor, buka tab Game > menu titik tiga > pilih "Keep Aspect" atau matikan "Embed Game on Next Play".
+
+## Update v10.2
+- Perbaikan gambar menu/loading yang tampil terlalu besar dan terpotong: urutan properti `TextureRect` diperbaiki di `menu.gd` dan `loading_overlay.gd` (expand_mode diatur sebelum texture dan size).
+
+## Update v10.3
+- Mask jalan Kota Skotice dibuat ulang: semua jalan (termasuk jalan melingkar krem di kiri dan kanan) dan tangga sekarang bisa dilewati; bangunan/pohon/pagar/tebing tetap terblokir. Edit `assets/skotice_mask.png` (80x120, putih = bisa dilewati) kalau ada yang kurang pas.
+
+## Update v10.4
+- NPC: tabrakan menutup badan (persegi 14x28), bukan hanya kaki.
+- Urutan gambar mengikuti posisi kaki (y-sort) di Guild, Skotice, dan Padang Latihan: pemain di belakang NPC digambar di belakangnya, di depan digambar di depannya.
+
+## Update v11
+- **Kota Skotice baru**: `assets/skotice_bg.png` dan mask jalan `assets/skotice_mask.png` dibuat ulang dari peta baru (semua jalan dan tangga bisa dilewati; bangunan, pohon, pagar, air, tebing terblokir).
+- **Peta dunia** (`assets/world_map.png`): tekan **M** di Guild, Skotice, atau Padang Latihan. Nama lokasi dan penanda posisi pemain diatur di `scripts/world_map.gd` (`LOCATIONS`, `HERE`).
+- **Pintu keluar guild** sekarang ditahan dinding sungguhan sampai mendaftar di Marla (bukan lagi dipindahkan paksa).
+
+## Update v11.1
+- Perbaikan error parser di `world_map.gd` (membuat game gagal berjalan).
+- Peta dunia diganti dengan versi berlabel (17 lokasi); tampil 1280x720 dan digeser dengan panah. Penanda emas = posisi pemain (Guild/Skotice = nomor 4, Padang Latihan = nomor 3). Posisi nomor ada di `NODES` pada `scripts/world_map.gd`.
+
+## Update v11.2
+- Nama kota **Eldoria diganti menjadi Meldon** di semua naskah dan dokumen (`data/dialog/id.txt`, `docs/`). Ejaan resmi: **Skotice** (bukan Scotice).
+- Catatan: tulisan "Scotice" pada gambar `assets/world_map.png` masih ejaan lama karena menyatu dengan gambar; perlu digambar ulang kalau ingin dikoreksi.
+
+## Update v11.5
+- **Peta dunia baru** (`assets/world_map.png`, 1280x720): ejaan di gambar sudah dikoreksi jadi **Skotice** (dua label), dan atap bangunan Desa (nomor 2) diganti biru supaya sama dengan map Desa. Posisi nomor tidak berubah, jadi `NODES` di `world_map.gd` tetap berlaku.
+- **Rumah pemain** (`scenes/Rumah.tscn`, `scripts/rumah.gd`, `assets/rumah_bg.png` 640x960): halaman rumah, kandang, kebun. Jalan tanah di kanan bawah = keluar ke Desa. Tabrakan ada di konstanta `WALLS`.
+- **Desa** (`scenes/Desa.tscn`, `scripts/desa.gd`, `assets/desa_bg.png` 1024x685): tiga jalan keluar sesuai peta dunia: barat (label baru "Rumah") ke Rumah, tangga kanan atas ke Kota Skotice, selatan ke Kota Meldon (belum dibuat, pemain didorong balik dengan pesan). Jembatan kayu di kanan bawah ditutup karena hanya hiasan.
+- **Alur baru**: Game Baru -> Rumah -> Desa -> Skotice (lewat jalan kanan atas Skotice) -> Guild. Skotice -> Padang Latihan sekarang butuh sudah mendaftar di Marla. "Lanjutkan" tanpa pendaftaran mulai dari Rumah.
+- Titik muncul: `rumah_entry` dan `desa_entry` di `game.gd`. Nomor peta dunia: Rumah = 1, Desa = 2.
+- Catatan skala: map Desa dipakai ukuran asli (sama dengan skala Skotice), map Rumah diperbesar 1,5x supaya memenuhi layar, jadi bangunan rumah tampak sedikit lebih besar daripada rumah di Desa. Kalau mau seragam, gambar ulang map Rumah dengan ukuran tile yang sama seperti Desa.
+- Semua perubahan ditulis tanpa bisa menjalankan Godot; kalau muncul error merah, kirim teksnya.
+
+## Update v11.6
+- **Jalan ke Skotice** (nomor 3 di peta dunia): scene baru `scenes/Jalan.tscn`, `scripts/jalan.gd`, `assets/jalan_bg.png` (1024x577), mask jalan `assets/jalan_mask.png` (256x145, 1 piksel = 4x4 px, putih = bisa dilewati; edit PNG-nya kalau ada yang kurang pas).
+- Alur diperbaiki: Rumah -> Desa -> (tangga kanan atas Desa) Jalan ke Skotice -> (tangga gerbang kanan atas) Kota Skotice. Gerbang bawah Skotice kembali ke Jalan. Padang Latihan sekarang lewat jalan kanan bawah di Jalan ke Skotice (butuh sudah mendaftar di Marla); dari Padang Latihan jalan ke atas = kembali ke Jalan.
+- Jalan kanan atas Skotice tidak lagi dipakai ke Desa (kembali seperti semula).
+- Tulisan "Jalan ke Kota Skotice", "Jalan ke Kota Meldon", dan "Rumah" di gambar Desa dihapus (diganti tekstur jalan asli). Pintu keluar sekarang dikenali dari bukaan jalannya dan dari pesan di layar.
+- Titik muncul baru: `jalan_entry` di `game.gd`.

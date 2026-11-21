@@ -116,13 +116,13 @@ Pak Wirya: Jangan bilang istriku, ya. Dia kira aku belum bayar utang ember ke te
 Rian: Kak. Lama sekali.
 {player}: Kamu kan pulang duluan tadi.
 Rian: Aku cuma... mau cek sesuatu. Ada pedagang tadi siang. Dia bawa selebaran.
-Rian: Katanya Guild di Eldoria buka pendaftaran petualang. Syaratnya lima belas tahun ke atas.
+Rian: Katanya Guild di Meldon buka pendaftaran petualang. Syaratnya lima belas tahun ke atas.
 {player}: Dan kamu mau daftar?
 Rian: Nanti. Kalau sudah lima belas tahun.
 {player}: Tapi tadi kamu bilang kamu bukan anak kecil.
 Rian: Ya itu kan... beda.
 # Diam sebentar. Rian menatap jalan keluar desa.
-Rian: Kakak masih mau lihat Eldoria, kan? Waktu kecil dulu kita pernah janji.
+Rian: Kakak masih mau lihat Meldon, kan? Waktu kecil dulu kita pernah janji.
 {player}: Entahlah. Aku belum yakin.
 Rian: Kalau kakak pergi, ceritakan semuanya. Jangan cuma monster. Makanan, kotanya, orang-orangnya juga.
 {player}: Kenapa kamu tidak ikut saja?
@@ -137,7 +137,7 @@ Ibu: Duduk dulu. Kamu kelihatan serius sekali.
 Ibu: Rian kena?
 {player}: Tidak, Bu. Dia baik-baik saja. Tapi aku sadar aku tidak bisa terus begini.
 Ayah: Desa ini punya penjaga. Sudah bertahun-tahun.
-{player}: Penjaganya sudah tua, Yah. Dan aku ingin belajar bertarung. Aku juga ingin mendaftar di Guild Eldoria.
+{player}: Penjaganya sudah tua, Yah. Dan aku ingin belajar bertarung. Aku juga ingin mendaftar di Guild Meldon.
 # Diam cukup lama. Ayah menaruh pisau yang sedang diasah.
 Ayah: Sejak kapan kamu memikirkan itu?
 {player}: Sudah cukup lama. Hari ini aku makin yakin.
@@ -192,7 +192,7 @@ Rian: Aku cuma tidak mau kakak lupa sama kami.
 {player}: Aku tidak akan lupa. Kalian alasanku untuk pulang.
 
 [pro_gerbang]
-# Pemain melewati gerbang desa. Objective: pergi ke Eldoria.
+# Pemain melewati gerbang desa. Objective: pergi ke Meldon.
 Narasi: Gerbang desa berderit di belakang punggungmu.
 Rian: Kak! Jangan cuma bawa cerita monster, ya!
 Narasi: Hari itu, seorang anak desa berangkat dengan bekal, pisau tua, dan janji untuk pulang.
@@ -208,13 +208,13 @@ Pedagang: Kamu? Masih muda sekali. Baiklah, aku percaya. Pakai cahaya kalau mere
 
 [ch1_gerobak_selesai]
 # Setelah slime dikalahkan.
-Pedagang: Terima kasih banyak. Kamu mau ke Eldoria?
+Pedagang: Terima kasih banyak. Kamu mau ke Meldon?
 {player}: Iya. Berapa lama lagi?
 Pedagang: Sebentar lagi sampai. Hati-hati di gerbang, yang jaga Elda. Dia baik, tapi pemalu sekali.
 
 [ch1_sena_dion]
-# Di jalan menuju Eldoria.
-Sena: Hei! Kamu juga mau ke Eldoria? Aku Sena. Kami sedang mengantar barang. Mau ikut?
+# Di jalan menuju Meldon.
+Sena: Hei! Kamu juga mau ke Meldon? Aku Sena. Kami sedang mengantar barang. Mau ikut?
 Dion: Sena, jangan tarik-tarik orang begitu. Halo. Aku Dion.
 Dion: Sepatuku memang bolong, tapi aku anggota Guild juga, kok.
 Sena: Dia bilang begitu tiap hari. Kamu siapa?
@@ -222,11 +222,11 @@ Sena: Dia bilang begitu tiap hari. Kamu siapa?
 Sena: Oke, {player}! Ayo jalan bareng!
 
 [ch1_elda_gerbang]
-# Gerbang Eldoria.
-Elda: Be-berhenti dulu. Mau masuk Eldoria?
+# Gerbang Meldon.
+Elda: Be-berhenti dulu. Mau masuk Meldon?
 {player}: Iya. Aku mau daftar di Guild.
 Elda: Oh... Guild? Marla ada di dekat air mancur, di dalam sana.
-Elda: Se-selamat datang di Eldoria. Kamu kelihatan sudah jauh berjalan.
+Elda: Se-selamat datang di Meldon. Kamu kelihatan sudah jauh berjalan.
 
 [ch1_marla_gantungan]
 # Dipicu di Guild bila pemain punya item_charm_rian. Marla menyebut gantungan itu.
@@ -238,3 +238,48 @@ Marla: Simpan baik-baik. Hal kecil seperti itu sering jadi alasan orang untuk be
 # Setelah marla_register selesai (pendaftaran berhasil).
 Marla: Selamat, {player}. Kamu resmi terdaftar. Arena Latihan di belakang sudah bisa dipakai.
 Marla: Oh, dan sebelum kamu pergi lebih jauh, makan dulu. Wajahmu terlihat seperti orang yang belum makan sejak pagi.
+
+
+# ===== PAPAN PENGUMUMAN GUILD (dari dokumen Dialog Papan Pengumuman v1.0) =====
+# Sistem terima/tolak quest dan quest log belum ada; sekarang papan hanya dibaca (bergantian 5 pengumuman).
+
+[papan_pertama]
+{player}: Ini papan pengumuman yang tadi dijelaskan Marla.
+{player}: Ada cukup banyak permintaan di sini.
+{player}: Sebaiknya kubaca satu per satu sebelum memilih.
+{player}: Setiap kertas punya tujuan dan hadiah yang berbeda.
+
+[papan_4a]
+Pengumuman: Persediaan Tanaman Obat Menipis. Dari Apoteker Aveloria. Kesulitan: Mudah (Lv 2).
+Pengumuman: Kumpulkan 5 tanaman obat di hutan sekitar Aveloria. Hadiah: Gold dan ramuan pemulih HP.
+{player}: Permintaan yang cukup sederhana.
+{player}: Aku bisa mencari tanaman itu di hutan sekitar kota.
+Sistem: Menerima misi dari papan belum tersedia di versi ini.
+
+[papan_4b]
+Pengumuman: Mencari Pengawal Perjalanan. Dari pedagang Aveloria. Kesulitan: Sedang (Lv 4).
+Pengumuman: Kawal rombongan pedagang di jalan menuju Meldon. Hadiah: Gold dan perlengkapan perjalanan.
+{player}: Mengawal rombongan dagang, ya?
+{player}: Jalan menuju Meldon memang cukup ramai. Mungkin mereka membutuhkan perlindungan tambahan.
+Sistem: Menerima misi dari papan belum tersedia di versi ini.
+
+[papan_4c]
+Pengumuman: Suara Aneh dari Gua. Dari penjaga wilayah utara. Kesulitan: Sedang (Lv 5).
+Pengumuman: Periksa sumber suara di gua kecil utara Aveloria. Hadiah: Gold dan material monster.
+{player}: Suara aneh dan jejak monster...
+{player}: Aku harus memeriksa keadaan gua dengan hati-hati.
+Sistem: Menerima misi dari papan belum tersedia di versi ini.
+
+[papan_4d]
+Pengumuman: Monster Mengganggu Jalan Hutan. Dari penjaga jalan. Kesulitan: Sedang (Lv 4).
+Pengumuman: Kalahkan 3 monster di hutan dekat jalan perdagangan. Hadiah: Gold dan material monster.
+{player}: Monster di dekat jalan perdagangan bisa membahayakan banyak orang.
+{player}: Kalau tidak segera ditangani, para pedagang mungkin akan menghindari jalur itu.
+Sistem: Menerima misi dari papan belum tersedia di versi ini.
+
+[papan_4e]
+Pengumuman: Mencari Warga yang Belum Kembali. Dari keluarga warga. Kesulitan: Sulit (Lv 6).
+Pengumuman: Temukan warga yang hilang di jalur hutan barat. Hadiah: Gold, EXP, dan hadiah dari keluarga.
+{player}: Seseorang hilang di hutan...
+{player}: Aku harus mencari tahu apa yang terjadi. Semoga dia masih selamat.
+Sistem: Menerima misi dari papan belum tersedia di versi ini.

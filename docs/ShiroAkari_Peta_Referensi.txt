@@ -7,11 +7,11 @@ Koordinat dihitung dari gambar 1448 x 1086 px (x dari kiri, y dari atas). Perkir
 1. DAERAH UTAMA (DAYA TARIK)
 
 A. Daratan Barat (pulau terbesar, kiri atas)
-- Eldoria (kota utama, kastil besar)                  ~ (540, 380)
+- Meldon (kota utama, kastil besar)                  ~ (540, 380)
   Usulan: tujuan Chapter 1, lokasi Guild.
 - Asteria Village (desa prolog, nama sementara)        ~ (395, 575)
   Usulan: desa di tepi pantai barat daya, dekat hutan.
-  Catatan: rute dari desa ke Eldoria mengikuti jalan utama di peta.
+  Catatan: rute dari desa ke Meldon mengikuti jalan utama di peta.
 - Pegunungan Salju Barat Laut                          ~ (400, 130)
   Usulan: area bersalju, cocok untuk musuh tier 2 (Gargoyle, Golem Batu).
 - Kota Ladang Timur (desa kecil di tepi timur)         ~ (705, 415)
@@ -43,8 +43,8 @@ C. Daratan Tenggara (pulau kanan bawah)
   Catatan: area ini dikelilingi kabut ungu, cocok untuk boss.
 
 4. RUTE YANG DISARANKAN (SEMENTARA)
-- Prolog: Asteria Village -> jalan barat ke Eldoria (Chapter 1).
-- Chapter 1: Eldoria (Guild) sebagai pusat, lalu Hutan Selatan dan Gunung Batu Selatan sebagai area latihan.
+- Prolog: Asteria Village -> jalan barat ke Meldon (Chapter 1).
+- Chapter 1: Meldon (Guild) sebagai pusat, lalu Hutan Selatan dan Gunung Batu Selatan sebagai area latihan.
 - Chapter 2 dan seterusnya: Pegunungan Salju, Kota Verdan, lalu daratan tenggara.
 - Area akhir: Kastil Kegelapan (dibuka setelah boss utama).
 

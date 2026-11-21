@@ -68,7 +68,7 @@ func _row(kind: String, cfg: Dictionary) -> Control:
     var info := Label.new()
     info.add_theme_font_size_override("font_size", 11)
     var extra := "  [BOS]" if cfg.get("boss", false) else ""
-    info.text = "%s%s\\nHP %d   XP %d   Muncul: Lv %d" % [cfg["name"], extra, int(cfg["hp"]), int(cfg["xp"]), int(cfg["min_lv"])]
+    info.text = "%s%s\nHP %d   XP %d   Muncul: Lv %d" % [cfg["name"], extra, int(cfg["hp"]), int(cfg["xp"]), int(cfg["min_lv"])]
     row.add_child(info)
     return row
 

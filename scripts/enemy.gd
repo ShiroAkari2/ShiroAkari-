@@ -6,10 +6,10 @@ extends CharacterBody2D
 #   min_lv: mulai muncul di Arena pada level ini; berhenti muncul 5 level setelahnya (agar musuh lemah tidak menumpuk).
 const SHOT := preload("res://scripts/enemy_shot.gd")
 const TYPES := {
-    "blue": {"name": "Slime Biru", "hp": 2, "xp": 3, "speed": 52.0, "touch": 1, "rec": 3, "min_lv": 1, "weight": 4, "beh": "chase", "r": 7, "color": Color("5b8def")},
-    "green": {"name": "Slime Hijau", "hp": 3, "xp": 5, "speed": 40.0, "touch": 1, "rec": 5, "min_lv": 2, "weight": 3, "beh": "lunge", "r": 7, "color": Color("5fcf6a"),
+    "blue": {"name": "Slime Biru", "hp": 2, "xp": 3, "speed": 52.0, "touch": 1, "rec": 3, "min_lv": 1, "weight": 4, "beh": "chase", "r": 7, "h": 20, "color": Color("5b8def")},
+    "green": {"name": "Slime Hijau", "hp": 3, "xp": 5, "speed": 40.0, "touch": 1, "rec": 5, "min_lv": 2, "weight": 3, "beh": "lunge", "r": 7, "h": 20, "color": Color("5fcf6a"),
         "windup": 0.45, "lunge_speed": 210.0, "lunge_time": 0.3, "trigger": 70.0, "lunge_cd": 1.2},
-    "red": {"name": "Slime Merah", "hp": 5, "xp": 8, "speed": 62.0, "touch": 2, "rec": 7, "min_lv": 4, "weight": 2, "beh": "chase", "r": 8, "color": Color("e04545")},
+    "red": {"name": "Slime Merah", "hp": 5, "xp": 8, "speed": 62.0, "touch": 2, "rec": 7, "min_lv": 4, "weight": 2, "beh": "chase", "r": 8, "h": 22, "color": Color("e04545")},
     "goblin": {"name": "Goblin", "hp": 3, "xp": 5, "speed": 62.0, "touch": 1, "rec": 4, "min_lv": 2, "weight": 3, "beh": "chase", "r": 6, "h": 28},
     "skeleton": {"name": "Kerangka", "hp": 4, "xp": 6, "speed": 46.0, "touch": 1, "rec": 5, "min_lv": 3, "weight": 3, "beh": "chase", "r": 6, "h": 30},
     "common_beast": {"name": "Binatang Liar", "hp": 3, "xp": 5, "speed": 72.0, "touch": 1, "rec": 5, "min_lv": 3, "weight": 2, "beh": "lunge", "r": 6, "h": 24,
@@ -28,16 +28,16 @@ const TYPES := {
         "windup": 0.5, "lunge_speed": 230.0, "lunge_time": 0.32, "trigger": 100.0, "lunge_cd": 1.4},
     "death_knight": {"name": "Ksatria Maut", "hp": 30, "xp": 60, "speed": 48.0, "touch": 4, "rec": 12, "min_lv": 9, "weight": 0, "beh": "lunge", "r": 12, "h": 52, "boss": true,
         "windup": 0.5, "lunge_speed": 260.0, "lunge_time": 0.35, "trigger": 110.0, "lunge_cd": 1.6},
-    # --- Tier 2 (Lv 10-20). Belum punya sprite: tampil sebagai lingkaran berwarna sampai gambar dibuat ---
-    "dark_wolf": {"name": "Serigala Kelam", "hp": 14, "xp": 30, "speed": 80.0, "touch": 3, "rec": 11, "min_lv": 10, "weight": 2, "beh": "lunge", "r": 8, "color": Color("3a2d5c"),
+    # --- Tier 2 (Lv 10-20). Sprite di assets/enemies/<kind>_a.png & _b.png ---
+    "dark_wolf": {"name": "Serigala Kelam", "hp": 14, "xp": 30, "speed": 80.0, "touch": 3, "rec": 11, "min_lv": 10, "weight": 2, "beh": "lunge", "r": 8, "h": 32, "color": Color("3a2d5c"),
         "windup": 0.3, "lunge_speed": 260.0, "lunge_time": 0.3, "trigger": 100.0, "lunge_cd": 0.9},
-    "troll": {"name": "Troll Batu", "hp": 22, "xp": 45, "speed": 36.0, "touch": 3, "rec": 13, "min_lv": 12, "weight": 2, "beh": "chase", "r": 11, "color": Color("6b7a5a")},
-    "wraith": {"name": "Hantu Kelana", "hp": 12, "xp": 40, "speed": 58.0, "touch": 2, "rec": 14, "min_lv": 13, "weight": 2, "beh": "ranged", "r": 7, "color": Color("9fd3e8"),
+    "troll": {"name": "Troll Batu", "hp": 22, "xp": 45, "speed": 36.0, "touch": 3, "rec": 13, "min_lv": 12, "weight": 2, "beh": "chase", "r": 11, "h": 46, "color": Color("6b7a5a")},
+    "wraith": {"name": "Hantu Kelana", "hp": 12, "xp": 40, "speed": 58.0, "touch": 2, "rec": 14, "min_lv": 13, "weight": 2, "beh": "ranged", "r": 7, "h": 36, "color": Color("9fd3e8"),
         "shot_cd": 2.2, "shot_speed": 130.0, "shot_dmg": 2, "keep": 120.0, "windup": 0.4},
-    "warlord": {"name": "Panglima Orc", "hp": 18, "xp": 50, "speed": 44.0, "touch": 3, "rec": 15, "min_lv": 14, "weight": 2, "beh": "chase", "r": 10, "color": Color("8a3b2e")},
-    "gargoyle": {"name": "Gargoyle", "hp": 16, "xp": 55, "speed": 60.0, "touch": 3, "rec": 16, "min_lv": 16, "weight": 2, "beh": "lunge", "r": 9, "color": Color("7d7f8c"),
+    "warlord": {"name": "Panglima Orc", "hp": 18, "xp": 50, "speed": 44.0, "touch": 3, "rec": 15, "min_lv": 14, "weight": 2, "beh": "chase", "r": 10, "h": 46, "color": Color("8a3b2e")},
+    "gargoyle": {"name": "Gargoyle", "hp": 16, "xp": 55, "speed": 60.0, "touch": 3, "rec": 16, "min_lv": 16, "weight": 2, "beh": "lunge", "r": 9, "h": 40, "color": Color("7d7f8c"),
         "windup": 0.45, "lunge_speed": 230.0, "lunge_time": 0.3, "trigger": 90.0, "lunge_cd": 1.3},
-    "stone_golem": {"name": "Golem Batu", "hp": 26, "xp": 70, "speed": 30.0, "touch": 4, "rec": 19, "min_lv": 18, "weight": 2, "beh": "chase", "r": 12, "color": Color("5c5f6e")}}
+    "stone_golem": {"name": "Golem Batu", "hp": 26, "xp": 70, "speed": 30.0, "touch": 4, "rec": 19, "min_lv": 18, "weight": 2, "beh": "chase", "r": 12, "h": 50, "color": Color("5c5f6e")}}
 # sprite pose "b" yang aslinya menghadap kanan (supaya flip-nya benar)
 const NATIVE_RIGHT_B := ["common_beast", "wolf", "orc_archer"]
 const AGGRO := 150.0
@@ -98,6 +98,7 @@ static func kinds_for_level(lv: int) -> Array:
 
 func _ready():
     add_to_group("enemy")
+    set("y_sort_origin", 0)
     collision_layer = 4   # musuh di layer 4
     collision_mask = 1    # hanya bertabrakan dengan tembok
     texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
@@ -110,6 +111,7 @@ func _ready():
     rec = int(cfg["rec"])
     radius = float(cfg.get("r", 7))
     beh = str(cfg.get("beh", "chase"))
+    set("y_sort_origin", int(radius + 3.0))
     _load_sprites()
     var c := CollisionShape2D.new()
     var s := CircleShape2D.new()

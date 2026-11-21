@@ -5,7 +5,7 @@ Versi: Draft 2.0
 PERUBAHAN DARI DRAFT 1.1
 - Adik sekarang laki-laki, 12 tahun, bernama Rian (nama sementara).
 - Ada pemicu konkret: slime muncul di dekat pagar saat tugas ayah. Pemain melindungi Rian dan sadar desa kekurangan penjaga.
-- Pendaftaran petualang di Guild Eldoria diperkenalkan lewat selebaran pedagang dan dibawa Rian pulang.
+- Pendaftaran petualang di Guild Meldon diperkenalkan lewat selebaran pedagang dan dibawa Rian pulang.
 - Tugas ayah dan ibu dipisah agar tidak tumpang tindih.
 - Ramuan dari ibu diganti dengan ramuan dari tetangga (Bu Sari), dan pisau tua ayah ditambahkan.
 - Pilihan malam hari dibuat bercabang ringan (lihat bagian Flag).
@@ -34,7 +34,7 @@ Tokoh dan cara bicara:
 - Ibu: hangat dan praktis. Banyak bertanya, sering memberi perintah kecil, dan langsung tahu kalau ada yang disembunyikan. Khawatirnya lebih sering terlihat lewat omelan.
 - Rian (12 tahun): ceria, ingin tahu, dan gengsian. Selalu menyangkal kalau ketakutan. Ingin terlihat dewasa, tapi masih kekanakan. Sayang kepada kakaknya meski jarang diucapkan.
 - Pak Wirya (tetangga): tua, sering mengeluh soal punggungnya, tapi baik hati.
-- Pedagang keliling: ramah, suka bercerita, sumber informasi tentang Eldoria.
+- Pedagang keliling: ramah, suka bercerita, sumber informasi tentang Meldon.
 - Sena, Dion, Elda, Marla: NPC Guild yang sudah ada di game. Muncul lagi di Chapter 1.
 
 3. URUTAN CERITA
@@ -66,10 +66,10 @@ Side Quest 0.A — Pak Wirya dan ember (opsional)
 Ember Pak Wirya jatuh ke sumur. Pemain mengambilkannya dan menerima hadiah kecil.
 
 Scene 0.6 — Sore: Rian di pagar
-Rian duduk di pagar, pura-pura sibuk dengan ranting. Ia menceritakan selebaran pedagang: pendaftaran petualang di Guild Eldoria, dengan syarat umur minimal lima belas tahun. Ia ingin ikut, dan ingin tahu apakah kakaknya masih mau pergi. Ia juga memintanya bercerita tentang kota nanti. Tapi ia belum boleh pergi, jadi kakaknya yang harus pergi dulu.
+Rian duduk di pagar, pura-pura sibuk dengan ranting. Ia menceritakan selebaran pedagang: pendaftaran petualang di Guild Meldon, dengan syarat umur minimal lima belas tahun. Ia ingin ikut, dan ingin tahu apakah kakaknya masih mau pergi. Ia juga memintanya bercerita tentang kota nanti. Tapi ia belum boleh pergi, jadi kakaknya yang harus pergi dulu.
 
 Scene 0.7 — Malam: bicara dengan orang tua
-Pemain menemui Ayah dan Ibu di ruang keluarga. Ia menceritakan slime di pagar, dan keinginannya untuk belajar bertarung dan mendaftar di Guild Eldoria.
+Pemain menemui Ayah dan Ibu di ruang keluarga. Ia menceritakan slime di pagar, dan keinginannya untuk belajar bertarung dan mendaftar di Guild Meldon.
 
 Ayah diam cukup lama. Ibu bertanya apakah keputusan ini sudah dipikirkan. Setelah itu percakapan bercabang (lihat bagian Flag):
 - Versi A: pemain ingin melindungi desa. Ayah tampak lebih yakin dan menyebut bahwa ia pernah berharap ada yang melakukannya.
@@ -89,15 +89,15 @@ Akhir prolog. Title card: CHAPTER 1 — PERJALANAN PERTAMA.
 CHAPTER 1 (AWAL)
 
 Scene 1.1 — Jalan hutan
-Pemain bertemu pedagang yang roda gerobaknya patah dan dikelilingi beberapa slime. Pemain membantu mengusir slime dan belajar memakai cahaya (K) untuk menghentikan musuh yang mendekat. Pedagang memberi tahu bahwa Eldoria sudah dekat dan menyebut bahwa penjaga gerbang bernama Elda.
+Pemain bertemu pedagang yang roda gerobaknya patah dan dikelilingi beberapa slime. Pemain membantu mengusir slime dan belajar memakai cahaya (K) untuk menghentikan musuh yang mendekat. Pedagang memberi tahu bahwa Meldon sudah dekat dan menyebut bahwa penjaga gerbang bernama Elda.
 
 Scene 1.2 — Persinggahan dengan Sena dan Dion
-Di jalan menuju Eldoria, pemain bertemu Sena dan Dion yang sedang menjalankan misi pengantar. Sena mengajak pemain ikut. Dion memperkenalkan dirinya dengan sepatu bolong sebagai bahan candaan. Ini cara memperkenalkan Guild tanpa ceramah panjang.
+Di jalan menuju Meldon, pemain bertemu Sena dan Dion yang sedang menjalankan misi pengantar. Sena mengajak pemain ikut. Dion memperkenalkan dirinya dengan sepatu bolong sebagai bahan candaan. Ini cara memperkenalkan Guild tanpa ceramah panjang.
 
-Scene 1.3 — Gerbang Eldoria
+Scene 1.3 — Gerbang Meldon
 Elda, penjaga gerbang yang pemalu, memeriksa pemain. Ia memberi tahu bahwa Guild ada di dekat air mancur. Pemain pertama kali melihat kota besar.
 
-Scene 1.4 — Guild Eldoria
+Scene 1.4 — Guild Meldon
 Pemain masuk ke Guild dan bertemu Marla. Dialog pendaftaran berjalan seperti biasa (marla_register). Setelah itu, bila pemain membawa gantungan dari Rian, Marla menyebutnya dan itu menjadi pengingat rumah.
 
 Tujuan Chapter 1 berikutnya tidak dibahas di sini.
